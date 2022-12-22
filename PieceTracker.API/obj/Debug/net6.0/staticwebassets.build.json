@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "8LTzNJvkO16QGXqcgHk92EfTJi+fJarWdW3P3In3WqI=",
+  "Source": "PieceTracker.API",
+  "BasePath": "_content/PieceTracker.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

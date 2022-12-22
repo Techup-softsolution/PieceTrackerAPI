@@ -1,0 +1,10 @@
+D:\Projects\PieceTracker\Source\PieceTracker\PieceTracker.Model\bin\Debug\netstandard2.0\PieceTracker.Model.deps.json
+D:\Projects\PieceTracker\Source\PieceTracker\PieceTracker.Model\bin\Debug\netstandard2.0\PieceTracker.Model.dll
+D:\Projects\PieceTracker\Source\PieceTracker\PieceTracker.Model\bin\Debug\netstandard2.0\PieceTracker.Model.pdb
+D:\Projects\PieceTracker\Source\PieceTracker\PieceTracker.Model\obj\Debug\netstandard2.0\PieceTracker.Model.csproj.AssemblyReference.cache
+D:\Projects\PieceTracker\Source\PieceTracker\PieceTracker.Model\obj\Debug\netstandard2.0\PieceTracker.Model.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\PieceTracker\Source\PieceTracker\PieceTracker.Model\obj\Debug\netstandard2.0\PieceTracker.Model.AssemblyInfoInputs.cache
+D:\Projects\PieceTracker\Source\PieceTracker\PieceTracker.Model\obj\Debug\netstandard2.0\PieceTracker.Model.AssemblyInfo.cs
+D:\Projects\PieceTracker\Source\PieceTracker\PieceTracker.Model\obj\Debug\netstandard2.0\PieceTracker.Model.csproj.CoreCompileInputs.cache
+D:\Projects\PieceTracker\Source\PieceTracker\PieceTracker.Model\obj\Debug\netstandard2.0\PieceTracker.Model.dll
+D:\Projects\PieceTracker\Source\PieceTracker\PieceTracker.Model\obj\Debug\netstandard2.0\PieceTracker.Model.pdb
