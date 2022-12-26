@@ -1,0 +1,10 @@
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Model\bin\Release\netstandard2.0\PieceTracker.Model.deps.json
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Model\bin\Release\netstandard2.0\PieceTracker.Model.dll
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Model\bin\Release\netstandard2.0\PieceTracker.Model.pdb
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Model\obj\Release\netstandard2.0\PieceTracker.Model.csproj.AssemblyReference.cache
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Model\obj\Release\netstandard2.0\PieceTracker.Model.GeneratedMSBuildEditorConfig.editorconfig
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Model\obj\Release\netstandard2.0\PieceTracker.Model.AssemblyInfoInputs.cache
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Model\obj\Release\netstandard2.0\PieceTracker.Model.AssemblyInfo.cs
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Model\obj\Release\netstandard2.0\PieceTracker.Model.csproj.CoreCompileInputs.cache
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Model\obj\Release\netstandard2.0\PieceTracker.Model.dll
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Model\obj\Release\netstandard2.0\PieceTracker.Model.pdb

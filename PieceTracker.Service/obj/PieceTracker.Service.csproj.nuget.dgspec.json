@@ -1,14 +1,14 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\PieceTracker\\Source\\PieceTracker\\PieceTracker.Service\\PieceTracker.Service.csproj": {}
+    "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Service\\PieceTracker.Service.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\PieceTracker\\Source\\PieceTracker\\PieceTracker.Common\\PieceTracker.Common.csproj": {
+    "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Common\\PieceTracker.Common.csproj": {
       "restore": {
-        "projectUniqueName": "D:\\Projects\\PieceTracker\\Source\\PieceTracker\\PieceTracker.Common\\PieceTracker.Common.csproj",
+        "projectUniqueName": "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Common\\PieceTracker.Common.csproj",
         "projectName": "PieceTracker.Common",
-        "projectPath": "D:\\Projects\\PieceTracker\\Source\\PieceTracker\\PieceTracker.Common\\PieceTracker.Common.csproj",
+        "projectPath": "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Common\\PieceTracker.Common.csproj",
         "frameworks": {
           "net472": {
             "projectReferences": {}
@@ -19,17 +19,20 @@
         "net472": {}
       }
     },
-    "D:\\Projects\\PieceTracker\\Source\\PieceTracker\\PieceTracker.Data\\PieceTracker.Data.csproj": {
+    "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Data\\PieceTracker.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\PieceTracker\\Source\\PieceTracker\\PieceTracker.Data\\PieceTracker.Data.csproj",
+        "projectUniqueName": "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Data\\PieceTracker.Data.csproj",
         "projectName": "PieceTracker.Data",
-        "projectPath": "D:\\Projects\\PieceTracker\\Source\\PieceTracker\\PieceTracker.Data\\PieceTracker.Data.csproj",
-        "packagesPath": "C:\\Users\\TECHUP\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\PieceTracker\\Source\\PieceTracker\\PieceTracker.Data\\obj\\",
+        "projectPath": "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Data\\PieceTracker.Data.csproj",
+        "packagesPath": "C:\\Users\\Om Enterprise\\.nuget\\packages\\",
+        "outputPath": "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Data\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\TECHUP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Om Enterprise\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -43,11 +46,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Projects\\PieceTracker\\Source\\PieceTracker\\PieceTracker.Common\\PieceTracker.Common.csproj": {
-                "projectPath": "D:\\Projects\\PieceTracker\\Source\\PieceTracker\\PieceTracker.Common\\PieceTracker.Common.csproj"
+              "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Common\\PieceTracker.Common.csproj": {
+                "projectPath": "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Common\\PieceTracker.Common.csproj"
               },
-              "D:\\Projects\\PieceTracker\\Source\\PieceTracker\\PieceTracker.Model\\PieceTracker.Model.csproj": {
-                "projectPath": "D:\\Projects\\PieceTracker\\Source\\PieceTracker\\PieceTracker.Model\\PieceTracker.Model.csproj"
+              "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Model\\PieceTracker.Model.csproj": {
+                "projectPath": "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Model\\PieceTracker.Model.csproj"
               }
             }
           }
@@ -89,7 +92,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -98,21 +102,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Projects\\PieceTracker\\Source\\PieceTracker\\PieceTracker.Model\\PieceTracker.Model.csproj": {
+    "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Model\\PieceTracker.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\PieceTracker\\Source\\PieceTracker\\PieceTracker.Model\\PieceTracker.Model.csproj",
+        "projectUniqueName": "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Model\\PieceTracker.Model.csproj",
         "projectName": "PieceTracker.Model",
-        "projectPath": "D:\\Projects\\PieceTracker\\Source\\PieceTracker\\PieceTracker.Model\\PieceTracker.Model.csproj",
-        "packagesPath": "C:\\Users\\TECHUP\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\PieceTracker\\Source\\PieceTracker\\PieceTracker.Model\\obj\\",
+        "projectPath": "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Model\\PieceTracker.Model.csproj",
+        "packagesPath": "C:\\Users\\Om Enterprise\\.nuget\\packages\\",
+        "outputPath": "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Model\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\TECHUP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Om Enterprise\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -155,25 +162,29 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Projects\\PieceTracker\\Source\\PieceTracker\\PieceTracker.Service\\PieceTracker.Service.csproj": {
+    "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Service\\PieceTracker.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\PieceTracker\\Source\\PieceTracker\\PieceTracker.Service\\PieceTracker.Service.csproj",
+        "projectUniqueName": "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Service\\PieceTracker.Service.csproj",
         "projectName": "PieceTracker.Service",
-        "projectPath": "D:\\Projects\\PieceTracker\\Source\\PieceTracker\\PieceTracker.Service\\PieceTracker.Service.csproj",
-        "packagesPath": "C:\\Users\\TECHUP\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\PieceTracker\\Source\\PieceTracker\\PieceTracker.Service\\obj\\",
+        "projectPath": "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Service\\PieceTracker.Service.csproj",
+        "packagesPath": "C:\\Users\\Om Enterprise\\.nuget\\packages\\",
+        "outputPath": "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Service\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\TECHUP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Om Enterprise\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -187,11 +198,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Projects\\PieceTracker\\Source\\PieceTracker\\PieceTracker.Common\\PieceTracker.Common.csproj": {
-                "projectPath": "D:\\Projects\\PieceTracker\\Source\\PieceTracker\\PieceTracker.Common\\PieceTracker.Common.csproj"
+              "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Common\\PieceTracker.Common.csproj": {
+                "projectPath": "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Common\\PieceTracker.Common.csproj"
               },
-              "D:\\Projects\\PieceTracker\\Source\\PieceTracker\\PieceTracker.Data\\PieceTracker.Data.csproj": {
-                "projectPath": "D:\\Projects\\PieceTracker\\Source\\PieceTracker\\PieceTracker.Data\\PieceTracker.Data.csproj"
+              "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Data\\PieceTracker.Data.csproj": {
+                "projectPath": "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Data\\PieceTracker.Data.csproj"
               }
             }
           }
@@ -217,7 +228,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -226,7 +238,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

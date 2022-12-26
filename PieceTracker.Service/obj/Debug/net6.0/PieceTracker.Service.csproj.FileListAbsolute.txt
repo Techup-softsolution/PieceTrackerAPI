@@ -22,3 +22,27 @@ D:\Projects\PieceTracker\Source\PieceTracker\PieceTracker.Service\bin\Debug\net6
 D:\Projects\PieceTracker\Source\PieceTracker\PieceTracker.Service\bin\Debug\net6.0\System.Net.Http.Formatting.xml
 D:\Projects\PieceTracker\Source\PieceTracker\PieceTracker.Service\bin\Debug\net6.0\Newtonsoft.Json.xml
 D:\Projects\PieceTracker\Source\PieceTracker\PieceTracker.Service\obj\Debug\net6.0\PieceTracker.Service.csproj.CopyComplete
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Service\bin\Debug\net6.0\PieceTracker.Service.deps.json
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Service\bin\Debug\net6.0\PieceTracker.Service.dll
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Service\bin\Debug\net6.0\PieceTracker.Service.pdb
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Service\bin\Debug\net6.0\PieceTracker.Common.dll
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Service\bin\Debug\net6.0\PieceTracker.Data.dll
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Service\bin\Debug\net6.0\PieceTracker.Model.dll
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Service\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Service\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Service\bin\Debug\net6.0\PieceTracker.Common.pdb
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Service\bin\Debug\net6.0\PieceTracker.Common.dll.config
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Service\bin\Debug\net6.0\PieceTracker.Data.pdb
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Service\bin\Debug\net6.0\PieceTracker.Model.pdb
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Service\bin\Debug\net6.0\System.Net.Http.Formatting.xml
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Service\bin\Debug\net6.0\Newtonsoft.Json.xml
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Service\obj\Debug\net6.0\PieceTracker.Service.csproj.AssemblyReference.cache
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Service\obj\Debug\net6.0\PieceTracker.Service.GeneratedMSBuildEditorConfig.editorconfig
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Service\obj\Debug\net6.0\PieceTracker.Service.AssemblyInfoInputs.cache
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Service\obj\Debug\net6.0\PieceTracker.Service.AssemblyInfo.cs
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Service\obj\Debug\net6.0\PieceTracker.Service.csproj.CoreCompileInputs.cache
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Service\obj\Debug\net6.0\PieceTracker.Service.csproj.CopyComplete
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Service\obj\Debug\net6.0\PieceTracker.Service.dll
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Service\obj\Debug\net6.0\refint\PieceTracker.Service.dll
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Service\obj\Debug\net6.0\PieceTracker.Service.pdb
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.Service\obj\Debug\net6.0\ref\PieceTracker.Service.dll

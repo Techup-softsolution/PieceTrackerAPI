@@ -11,6 +11,7 @@ using System.Net;
 namespace PieceTracker.API.Controllers
 {
     [Route("api/deliveryitem")]
+    [Authorize]
     [ApiController]
     public class DeliveryMasterAPIController : ControllerBase
     {

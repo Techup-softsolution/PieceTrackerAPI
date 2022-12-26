@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using System.Net;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.DataProtection;
 
 namespace PieceTracker.API.Controllers
 {
@@ -39,7 +40,10 @@ namespace PieceTracker.API.Controllers
                 {
                     response.Success = true;
                     response.Message = (EnumUtility.DisplayName(MessageEnums.GeneralActionMessage.LoginSuccess));
-                    response.JWTToken = JWTToken.GenerateJSONWebToken(model.UserEmail, _config.GetSection("ApplicationSettings:JWT_Secret").ToString());
+                    var secret = _config["Jwt:secret"];
+                    var audience = _config["Jwt:Audience"];
+                    var issuer = _config["Jwt:Issuer"];
+                    response.JWTToken = JWTToken.GenerateJSONWebToken(model.UserEmail, data.Id.ToString(), secret, issuer, audience);
                     response.StatusCode = System.Net.HttpStatusCode.OK;
                 }
                 else

@@ -11,6 +11,7 @@ using System.Net;
 namespace PieceTracker.API.Controllers
 {
     [Route("api/projectitems")]
+    [Authorize]
     [ApiController]
     public class ProjectItemsMasterAPIController : ControllerBase
     {
