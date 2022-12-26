@@ -46,40 +46,43 @@ namespace PieceTracker.API
             });
 
             services.AddControllers();
-
-            services.AddSwaggerGen(swagger =>
+            services.AddSwaggerGen(c =>
             {
-                swagger.SwaggerDoc("v1", new OpenApiInfo
-                {
-                    Version = "v1",
-                    Title = "JWT Token Authentication API",
-                    Description = "ASP.NET Core 5.0 Web API"
-                });
-                // To Enable authorization using Swagger (JWT)
-                swagger.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
-                {
-                    Name = "Authorization",
-                    Type = SecuritySchemeType.ApiKey,
-                    Scheme = "Bearer",
-                    BearerFormat = "JWT",
-                    In = ParameterLocation.Header,
-                    Description = "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef\"",
-                });
-                swagger.AddSecurityRequirement(new OpenApiSecurityRequirement
-                {
-                    {
-                          new OpenApiSecurityScheme
-                            {
-                                Reference = new OpenApiReference
-                                {
-                                    Type = ReferenceType.SecurityScheme,
-                                    Id = "Bearer"
-                                }
-                            },
-                            new string[] {}
-                    }
-                });
+                c.OperationFilter<FileOperation>();
             });
+            //services.AddSwaggerGen(swagger =>
+            //{
+            //    swagger.SwaggerDoc("v1", new OpenApiInfo
+            //    {
+            //        Version = "v1",
+            //        Title = "JWT Token Authentication API",
+            //        Description = "ASP.NET Core 5.0 Web API"
+            //    });
+            //    // To Enable authorization using Swagger (JWT)
+            //    //swagger.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+            //    //{
+            //    //    Name = "Authorization",
+            //    //    Type = SecuritySchemeType.ApiKey,
+            //    //    Scheme = "Bearer",
+            //    //    BearerFormat = "JWT",
+            //    //    In = ParameterLocation.Header,
+            //    //    Description = "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef\"",
+            //    //});
+            //    //swagger.AddSecurityRequirement(new OpenApiSecurityRequirement
+            //    //{
+            //    //    {
+            //    //          new OpenApiSecurityScheme
+            //    //            {
+            //    //                Reference = new OpenApiReference
+            //    //                {
+            //    //                    Type = ReferenceType.SecurityScheme,
+            //    //                    Id = "Bearer"
+            //    //                }
+            //    //            },
+            //    //            new string[] {}
+            //    //    }
+            //    //});
+            //});
             //services.AddAuthentication(option =>
             //{
             //    option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -128,6 +131,8 @@ namespace PieceTracker.API
             });
             app.UseRequestLocalization();
 
+            app.UseAuthentication();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -140,10 +145,10 @@ namespace PieceTracker.API
             app.UseStaticFiles();
             app.UseRouting();
             app.UseCors("MyAllowSpecificOrigins");
-            app.UseHttpsRedirection();
-            app.UseAuthentication();
             app.UseAuthorization();
-            app.UseMiddleware<JWTMiddleware>();
+
+            app.UseHttpsRedirection();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
