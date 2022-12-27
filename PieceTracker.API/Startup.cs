@@ -41,7 +41,7 @@ namespace PieceTracker.API
                 options.AddPolicy(name: "MyAllowSpecificOrigins",
                 builder =>
                 {
-                    builder.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod();
+                    builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
                 });
             });
 
@@ -141,7 +141,7 @@ namespace PieceTracker.API
                 //app.UseHsts();
             }
             app.UseRouting();
-            app.UseCors("MyAllowSpecificOrigins");
+            app.UseCors(buider => buider.AllowAnyOrigin().AllowAnyHeader().AllowAnyOrigin());
             app.UseStaticFiles();
             app.UseMiddleware<JWTMiddleware>();
             app.UseAuthentication();
