@@ -16,7 +16,8 @@ namespace PieceTracker.Data
                 { typeof(IProjectItemStatusMasterRepository), typeof(ProjectItemStatusMasterRepository) },
                 { typeof(IProjectSummaryMasterRepository), typeof(ProjectSummaryMasterRepository) },
                 { typeof(IDeliveryMasterRepository), typeof(DeliveryMasterRepository) },
-                { typeof(IProjectItemsMasterRepository), typeof(ProjectItemsMasterRepository) }
+                { typeof(IProjectItemsMasterRepository), typeof(ProjectItemsMasterRepository) },
+                { typeof(IShopMasterRepository), typeof(ShopMasterRepository) }
             };
             return dic;
         }

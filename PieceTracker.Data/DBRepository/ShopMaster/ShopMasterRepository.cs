@@ -1,57 +1,64 @@
 ﻿using Dapper;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Options;
 using PieceTracker.Common;
 using PieceTracker.Model;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PieceTracker.Model.Response;
+using PieceTracker.Model.Request;
 
 namespace PieceTracker.Data.DBRepository
 {
-    public class ProjectSummaryMasterRepository  : BaseRepository, IProjectSummaryMasterRepository
+    public class ShopMasterRepository : BaseRepository, IShopMasterRepository
     {
         private IConfiguration _config;
         private string APIBaseURL;
-        public ProjectSummaryMasterRepository(IConfiguration config, IOptions<DataConfig> dataConfig) : base(dataConfig)
+        public ShopMasterRepository(IConfiguration config, IOptions<DataConfig> dataConfig) : base(dataConfig)
         {
             _config = config;
             APIBaseURL = dataConfig.Value.FilePath;
         }
 
-        public async Task<List<GetAllProjectSummaryResponse>> GetAll()
+        //Method to get shop list from SP
+        public async Task<List<GetAllShopMasterResponse>> GetAll()
         {
             try
             {
                 var param = new DynamicParameters();
                 param.Add("@Mode", "S");
-                var data = await QueryAsync<GetAllProjectSummaryResponse>(SPHelper.ProjectSummary, param, commandType: CommandType.StoredProcedure);
+                var data = await QueryAsync<GetAllShopMasterResponse>(SPHelper.ShopDetails, param, commandType: CommandType.StoredProcedure);
                 return data.ToList();
             }
             catch (Exception ex)
             {
-                return new List<GetAllProjectSummaryResponse>();
+                return new List<GetAllShopMasterResponse>();
             }
         }
-        public async Task<GetAllProjectSummaryResponse> GetDetailById(int id)
+
+        //Method to get shop by Id from SP
+        public async Task<GetAllShopMasterResponse> GetDetailById(int id)
         {
             try
             {
                 var param = new DynamicParameters();
                 param.Add("@Mode", "SI");
                 param.Add("@Id", id);
-                var data = await QueryAsync<GetAllProjectSummaryResponse>(SPHelper.ProjectSummary, param, commandType: CommandType.StoredProcedure);
-                return data.FirstOrDefault();
+                var data = await QueryAsync<GetAllShopMasterResponse>(SPHelper.ShopDetails, param, commandType: CommandType.StoredProcedure);
+                return data.FirstOrDefault(); ;
             }
             catch (Exception ex)
             {
-                return new GetAllProjectSummaryResponse();
+                return new GetAllShopMasterResponse();
             }
         }
-        public async Task<GeneralModel> AddUpdateRecord(AddUpdateProjectSummaryRequest request)
+
+        //Method to Insert or update shop by Id from SP
+        public async Task<GeneralModel> AddUpdateShop(AddUpdateShopMasterRequest request)
         {
             GeneralModel modelResponse = new GeneralModel();
             try
@@ -66,16 +73,19 @@ namespace PieceTracker.Data.DBRepository
                     param.Add("@Mode", "U");
                     param.Add("@Id", request.Id);
                 }
-                param.Add("@ProjectName", request.ProjectName);
-                param.Add("@ContractAmount", request.ContractAmount);
-                param.Add("@CustomerName", request.CustomerName);
-                //param.Add("@EstimatedHours", request.EstimatedHours);
-                //param.Add("@EstimatedCost", request.EstimatedCost);
-                param.Add("@SiteAddress", request.SiteAddress);
-                param.Add("@EstimatedCostAndTime", request.EstimatedCostAndTime);
+                param.Add("@ShopName", request.ShopName);
+                param.Add("@PartNumber", request.PartNumber);
+                param.Add("@ProjectId", request.ProjectId);
+                param.Add("@ProjectLocation", request.ProjectLocation);
+
+                param.Add("@Quantity", request.Quantity);
+                param.Add("@Weight", request.Weight);
+                param.Add("@SubItem", request.SubItem);
+                param.Add("@StatusId", request.StatusId);
+
                 param.Add("@IsActive", request.IsActive);
                 param.Add("@LoggedInUser", request.CreatedBy);
-                var result = await QueryFirstOrDefaultAsync<GeneralModel>(SPHelper.ProjectSummary, param, commandType: CommandType.StoredProcedure);
+                var result = await QueryFirstOrDefaultAsync<GeneralModel>(SPHelper.ShopDetails, param, commandType: CommandType.StoredProcedure);
                 modelResponse.Status = result.Status;
                 modelResponse.Message = Utility.GetResponseMessage(result.Status, request.Id, (int)Enums.ActionName.AddUpdate);
                 modelResponse.Id = result.Id;
@@ -92,7 +102,9 @@ namespace PieceTracker.Data.DBRepository
                 };
             }
         }
-        public async Task<GeneralModel> DeleteRecord(AddUpdateProjectSummaryRequest request)
+
+        //Method to Delete shop from SP
+        public async Task<GeneralModel> DeleteRecord(AddUpdateShopMasterRequest request)
         {
             GeneralModel response = new GeneralModel();
             try
@@ -102,7 +114,7 @@ namespace PieceTracker.Data.DBRepository
                 param.Add("@Id", request.Id);
                 param.Add("@IsActive", request.IsActive);
                 param.Add("@LoggedInUser", request.ModifiedBy);
-                var result = await QueryFirstOrDefaultAsync<GeneralModel>(SPHelper.ProjectSummary, param, commandType: CommandType.StoredProcedure);
+                var result = await QueryFirstOrDefaultAsync<GeneralModel>(SPHelper.ShopDetails, param, commandType: CommandType.StoredProcedure);
                 response.Status = result.Status;
                 response.Message = Utility.GetResponseMessage(result.Status, request.Id, (int)Enums.ActionName.Delete);
                 response.Id = request.Id;

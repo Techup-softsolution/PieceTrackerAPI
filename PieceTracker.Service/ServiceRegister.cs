@@ -16,7 +16,8 @@ namespace PieceTracker.Service
                 { typeof(IProjectItemStatusService), typeof(ProjectItemStatusService)},
                 { typeof(IProjectSummaryMasterService), typeof(ProjectsummaryMasterService)},
                 { typeof(IDeliveryMasterService), typeof(DeliveryMasterService)},
-                { typeof(IProjectItemsMasterService), typeof(ProjectItemsMasterService)}
+                { typeof(IProjectItemsMasterService), typeof(ProjectItemsMasterService)},
+                { typeof(IShopService), typeof(ShopService)}
             };
             return dic;
         }

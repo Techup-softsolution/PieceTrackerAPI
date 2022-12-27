@@ -133,8 +133,6 @@ namespace PieceTracker.API.Controllers
                     ProjectName = request.ProjectName,
                     ContractAmount = request.ContractAmount,
                     CustomerName = request.CustomerName,
-                    EstimatedHours = request.EstimatedHours,
-                    EstimatedCost = request.EstimatedCost,
                     SiteAddress = request.SiteAddress
                 };
                 var result = await _roleService.AddUpdateRecord(summaryRequest);
@@ -160,8 +158,7 @@ namespace PieceTracker.API.Controllers
                         ActualFabricateDate = request.ActualFabricateDate,
                         ActualCoatingDate = request.ActualCoatingDate,
                         FabricatorName = request.FabricatorName,
-                        CoatingVendorName = request.CoatingVendorName,
-                        ItemStatus = request.ItemStatus
+                        CoatingVendorName = request.CoatingVendorName
                     };
                     var result1 = _itemsMasterService.AddUpdateRecord(itemsMasterRequest);
                     response.Id = result.Id;
