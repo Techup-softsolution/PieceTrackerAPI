@@ -141,7 +141,7 @@ namespace PieceTracker.API
                 //app.UseHsts();
             }
             app.UseRouting();
-            app.UseCors(buider => buider.AllowAnyOrigin().AllowAnyHeader().AllowAnyOrigin());
+            app.UseCors("MyAllowSpecificOrigins");
             app.UseStaticFiles();
             app.UseMiddleware<JWTMiddleware>();
             app.UseAuthentication();
