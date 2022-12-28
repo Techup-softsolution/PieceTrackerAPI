@@ -1,18 +1,12 @@
-﻿using PieceTracker.Common;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using PieceTracker.API.Logger;
+using PieceTracker.Common;
 using PieceTracker.Model;
 using PieceTracker.Service;
-using PieceTracker.API.Logger;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Options;
-using System;
-using System.Collections.Generic;
 using System.Net;
-using System.Threading.Tasks;
 
-namespace PieceTracker.API.Controllers
-{
+namespace PieceTracker.API.Controllers {
     [Route("api/projectsummary")]
     [ApiController]
     public class ProjectSummaryMasterAPIController : ControllerBase
@@ -80,7 +74,7 @@ namespace PieceTracker.API.Controllers
             }
         }
         [HttpPost("updatedetail")]
-        public async Task<BaseApiResponse> InsertUpdateDetail([FromBody] AddUpdateProjectSummaryRequest request)
+        public async Task<BaseApiResponse> InsertUpdateDetail([FromBody] PieceTracker.Model.AddUpdateProjectSummaryRequest request)
         {
             BaseApiResponse response = new BaseApiResponse();
             try

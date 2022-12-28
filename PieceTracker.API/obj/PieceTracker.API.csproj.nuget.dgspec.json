@@ -31,11 +31,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Common\\PieceTracker.Common.csproj": {
-                "projectPath": "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Common\\PieceTracker.Common.csproj"
-              },
-              "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Data\\PieceTracker.Data.csproj": {
-                "projectPath": "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Data\\PieceTracker.Data.csproj"
+              "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Model\\PieceTracker.Model.csproj": {
+                "projectPath": "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Model\\PieceTracker.Model.csproj"
               },
               "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Service\\PieceTracker.Service.csproj": {
                 "projectPath": "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Service\\PieceTracker.Service.csproj"

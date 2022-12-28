@@ -81,10 +81,10 @@ D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.API\
 D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.API\obj\Release\net6.0\PubTmp\Out\PieceTracker.Service.dll
 D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.API\obj\Release\net6.0\PubTmp\Out\System.Net.Http.Formatting.dll
 D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.API\obj\Release\net6.0\PubTmp\Out\Newtonsoft.Json.dll
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.API\obj\Release\net6.0\PubTmp\Out\PieceTracker.Model.pdb
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.API\obj\Release\net6.0\PubTmp\Out\PieceTracker.Service.pdb
 D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.API\obj\Release\net6.0\PubTmp\Out\PieceTracker.Common.pdb
 D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.API\obj\Release\net6.0\PubTmp\Out\PieceTracker.Common.dll.config
 D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.API\obj\Release\net6.0\PubTmp\Out\PieceTracker.Data.pdb
-D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.API\obj\Release\net6.0\PubTmp\Out\PieceTracker.Service.pdb
-D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.API\obj\Release\net6.0\PubTmp\Out\PieceTracker.Model.pdb
 D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.API\obj\Release\net6.0\PubTmp\Out\System.Net.Http.Formatting.xml
 D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.API\obj\Release\net6.0\PubTmp\Out\Newtonsoft.Json.xml

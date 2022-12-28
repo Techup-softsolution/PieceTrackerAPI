@@ -4195,8 +4195,7 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.1",
       "Microsoft.IdentityModel.JsonWebTokens >= 6.25.1",
       "NLog.Extensions.Logging >= 5.2.0",
-      "PieceTracker.Common >= 1.0.0",
-      "PieceTracker.Data >= 1.0.0",
+      "PieceTracker.Model >= 1.0.0",
       "PieceTracker.Service >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3",
       "System.IdentityModel.Tokens.Jwt >= 6.25.1",
@@ -4234,11 +4233,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Common\\PieceTracker.Common.csproj": {
-              "projectPath": "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Common\\PieceTracker.Common.csproj"
-            },
-            "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Data\\PieceTracker.Data.csproj": {
-              "projectPath": "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Data\\PieceTracker.Data.csproj"
+            "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Model\\PieceTracker.Model.csproj": {
+              "projectPath": "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Model\\PieceTracker.Model.csproj"
             },
             "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Service\\PieceTracker.Service.csproj": {
               "projectPath": "D:\\OtherWork\\Dhaval Patel\\PieceTracker\\Project\\PieceTrackerAPI\\PieceTracker.Service\\PieceTracker.Service.csproj"

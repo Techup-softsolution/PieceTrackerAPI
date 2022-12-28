@@ -17,9 +17,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PieceTracker.Common\PieceTracker.Common.csproj" />
-    <ProjectReference Include="..\PieceTracker.Data\PieceTracker.Data.csproj" />
+    <ProjectReference Include="..\PieceTracker.Model\PieceTracker.Model.csproj" />
     <ProjectReference Include="..\PieceTracker.Service\PieceTracker.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="PieceTracker.Common">
+      <HintPath>..\PieceTracker.Common\bin\Debug\PieceTracker.Common.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

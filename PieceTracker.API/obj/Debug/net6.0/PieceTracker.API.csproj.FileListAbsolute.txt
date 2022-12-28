@@ -190,8 +190,8 @@ D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.API\
 D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.API\bin\Debug\net6.0\PieceTracker.Common.pdb
 D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.API\bin\Debug\net6.0\PieceTracker.Common.dll.config
 D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.API\bin\Debug\net6.0\PieceTracker.Data.pdb
-D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.API\bin\Debug\net6.0\PieceTracker.Service.pdb
 D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.API\bin\Debug\net6.0\PieceTracker.Model.pdb
+D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.API\bin\Debug\net6.0\PieceTracker.Service.pdb
 D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.API\bin\Debug\net6.0\System.Net.Http.Formatting.xml
 D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.API\bin\Debug\net6.0\Newtonsoft.Json.xml
 D:\OtherWork\Dhaval Patel\PieceTracker\Project\PieceTrackerAPI\PieceTracker.API\obj\Debug\net6.0\PieceTracker.API.csproj.AssemblyReference.cache

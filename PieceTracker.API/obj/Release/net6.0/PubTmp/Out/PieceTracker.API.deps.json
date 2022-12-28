@@ -12,12 +12,12 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.1",
           "Microsoft.IdentityModel.JsonWebTokens": "6.25.1",
           "NLog.Extensions.Logging": "5.2.0",
-          "PieceTracker.Common": "1.0.0",
-          "PieceTracker.Data": "1.0.0",
+          "PieceTracker.Model": "1.0.0",
           "PieceTracker.Service": "1.0.0",
           "Swashbuckle.AspNetCore": "6.2.3",
           "System.IdentityModel.Tokens.Jwt": "6.25.1",
-          "System.Net.Primitives": "4.3.1"
+          "System.Net.Primitives": "4.3.1",
+          "PieceTracker.Common.Reference": "1.0.0.0"
         },
         "runtime": {
           "PieceTracker.API.dll": {}
@@ -844,11 +844,6 @@
           }
         }
       },
-      "PieceTracker.Common/1.0.0": {
-        "runtime": {
-          "PieceTracker.Common.dll": {}
-        }
-      },
       "PieceTracker.Data/1.0.0": {
         "dependencies": {
           "Dapper": "2.0.123",
@@ -879,6 +874,14 @@
         },
         "runtime": {
           "PieceTracker.Service.dll": {}
+        }
+      },
+      "PieceTracker.Common.Reference/1.0.0.0": {
+        "runtime": {
+          "PieceTracker.Common.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "System.Net.Http.Formatting/5.2.9.0": {
@@ -1493,11 +1496,6 @@
       "path": "system.windows.extensions/5.0.0",
       "hashPath": "system.windows.extensions.5.0.0.nupkg.sha512"
     },
-    "PieceTracker.Common/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "PieceTracker.Data/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -1510,6 +1508,11 @@
     },
     "PieceTracker.Service/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PieceTracker.Common.Reference/1.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
