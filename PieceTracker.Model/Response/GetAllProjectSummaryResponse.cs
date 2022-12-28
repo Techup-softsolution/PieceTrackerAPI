@@ -9,9 +9,10 @@ namespace PieceTracker.Model
         public string ProjectName { get; set; }
         public decimal ContractAmount { get; set; }
         public string CustomerName { get; set; }
-        public decimal EstimatedHours { get; set; }
-        public decimal EstimatedCost { get; set; }
+        //public decimal EstimatedHours { get; set; }
+        //public decimal EstimatedCost { get; set; }
         public string SiteAddress { get; set; }
+        public string EstimatedCostAndTime { get; set; }
 
     }
 }

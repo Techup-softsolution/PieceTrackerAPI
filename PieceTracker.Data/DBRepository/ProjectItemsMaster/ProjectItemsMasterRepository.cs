@@ -89,8 +89,13 @@ namespace PieceTracker.Data.DBRepository
                 param.Add("@ActualCoatingDate", request.ActualCoatingDate);
                 param.Add("@FabricatorName", request.FabricatorName);
                 param.Add("@CoatingVendorName", request.CoatingVendorName);
-                param.Add("@ItemStatus", request.ItemStatus);
+                //param.Add("@ItemStatus", request.ItemStatus);
                 param.Add("@ItemQRCode", request.ItemQRCode);
+                param.Add("@PainterName", request.PainterName);
+                param.Add("@VendorComplete", request.VendorComplete);
+                param.Add("@IsReadyForFabrication", request.IsReadyForFabrication);
+                param.Add("@IsFabricated", request.IsFabricated);
+                param.Add("@IsPainted", request.IsPainted);
                 param.Add("@IsActive", request.IsActive);
                 param.Add("@LoggedInUser", request.CreatedBy);
                 var result = await QueryFirstOrDefaultAsync<GeneralModel>(SPHelper.ProjectItems, param, commandType: CommandType.StoredProcedure);
