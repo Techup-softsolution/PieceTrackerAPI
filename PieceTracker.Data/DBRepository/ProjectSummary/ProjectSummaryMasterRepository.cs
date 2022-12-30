@@ -77,7 +77,12 @@ namespace PieceTracker.Data.DBRepository
                 param.Add("@LoggedInUser", request.CreatedBy);
                 var result = await QueryFirstOrDefaultAsync<GeneralModel>(SPHelper.ProjectSummary, param, commandType: CommandType.StoredProcedure);
                 modelResponse.Status = result.Status;
-                modelResponse.Message = Utility.GetResponseMessage(result.Status, request.Id, (int)Enums.ActionName.AddUpdate);
+
+                if(result.Status == false)
+                    modelResponse.Message = Utility.GetResponseMessage(result.Status, request.Id, (int)Enums.ActionName.AddUpdate,result.Message);
+                else
+                    modelResponse.Message = Utility.GetResponseMessage(result.Status, request.Id, (int)Enums.ActionName.AddUpdate);
+
                 modelResponse.Id = result.Id;
                 return modelResponse;
             }

@@ -72,6 +72,8 @@ namespace PieceTracker.Data.DBRepository
                 param.Add("@TotalWeight", request.TotalWeight);
                 param.Add("@IsActive", request.IsActive);
                 param.Add("@LoggedInUser", request.CreatedBy);
+                param.Add("@DeliveryName", request.DeliveryName);
+                param.Add("@DeliveryDate", request.DeliveryDate);
                 var result = await QueryFirstOrDefaultAsync<GeneralModel>(SPHelper.Delivery, param, commandType: CommandType.StoredProcedure);
                 modelResponse.Status = result.Status;
                 modelResponse.Message = Utility.GetResponseMessage(result.Status, request.Id, (int)Enums.ActionName.AddUpdate);

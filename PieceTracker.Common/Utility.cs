@@ -264,9 +264,13 @@ namespace PieceTracker.Common
             Random _rdm = new Random();
             return _rdm.Next(_min, _max).ToString();
         }
-        public static string GetResponseMessage(bool status, int recordId, int action)
+        public static string GetResponseMessage(bool status, int recordId, int action , string customMessage = "")
         {
             string response = string.Empty;
+            if (!string.IsNullOrWhiteSpace(customMessage)) {
+                response = customMessage;
+                return response;
+            }
             switch (action)
             {
                 case (int)Enums.ActionName.AddUpdate:

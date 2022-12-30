@@ -14,5 +14,7 @@ namespace PieceTracker.Model.Request
         public string DeliveryAddress { get; set; }
         public int Status { get; set; }
         public decimal TotalWeight { get; set; }
+        public string DeliveryName { get; set; }
+        public DateTime DeliveryDate { get; set; }
     }
 }
