@@ -40,6 +40,20 @@ namespace PieceTracker.Data.DBRepository
                 return new List<GetAllProjectItemsMasterRespose>();
             }
         }
+
+        public async Task<List<GetAllProjectItemsMasterRespose>> GetAllByProjectId(int id) {
+            try {
+                var param = new DynamicParameters();
+                param.Add("@Mode", "SPID");
+                param.Add("@Id", id);
+                var data = await QueryAsync<GetAllProjectItemsMasterRespose>(SPHelper.ProjectItems, param, commandType: CommandType.StoredProcedure);
+                return data.ToList();
+            }
+            catch (Exception ex) {
+                return new List<GetAllProjectItemsMasterRespose>();
+            }
+        }
+
         public async Task<GetAllProjectItemsMasterRespose> GetDetailById(int id)
         {
             try

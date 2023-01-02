@@ -12,6 +12,7 @@ namespace PieceTracker.Service
     public interface IProjectItemsMasterService
     {
         Task<List<GetAllProjectItemsMasterRespose>> GetAll();
+        Task<List<GetAllProjectItemsMasterRespose>> GetAllByProjectId(int id);
         Task<GetAllProjectItemsMasterRespose> GetDetailById(int id);
         Task<GeneralModel> AddUpdateRecord(AddUpdateProjectItemsMasterRequest request);
         Task<GeneralModel> DeleteRecord(AddUpdateProjectItemsMasterRequest request);

@@ -21,6 +21,10 @@ namespace PieceTracker.Service
         {
             return await _repository.GetAll();
         }
+        public async Task<List<GetAllProjectItemsMasterRespose>> GetAllByProjectId(int id) 
+        {
+            return await _repository.GetAllByProjectId(id);
+        }
         public async Task<GetAllProjectItemsMasterRespose> GetDetailById(int id)
         {
             return await _repository.GetDetailById(id);

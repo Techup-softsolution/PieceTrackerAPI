@@ -25,6 +25,7 @@ namespace PieceTracker.API.Controllers {
             _config = config;
             _appSettings = appSettings.Value;
         }
+
         [HttpGet("getall")]
         public async Task<ApiResponse<GetAllProjectItemsMasterRespose>> GetAll() {
             ApiResponse<GetAllProjectItemsMasterRespose> response = new ApiResponse<GetAllProjectItemsMasterRespose>() { Data = new List<GetAllProjectItemsMasterRespose>() };
@@ -47,6 +48,31 @@ namespace PieceTracker.API.Controllers {
             }
             return response;
         }
+
+        [HttpGet("getAllByProjectId/{id:int}")]
+        public async Task<ApiResponse<GetAllProjectItemsMasterRespose>> GetAllById(int id) {
+            ApiResponse<GetAllProjectItemsMasterRespose> response = new ApiResponse<GetAllProjectItemsMasterRespose>() { Data = new List<GetAllProjectItemsMasterRespose>() };
+            try {
+                var result = await _roleService.GetAllByProjectId(id);
+                if (result == null) {
+                    response.Success = false;
+                    response.Message = EnumUtility.DisplayName(MessageEnums.GeneralActionMessage.RecordNotFound);
+                    response.StatusCode = HttpStatusCode.NotFound;
+                }
+                response.Success = true;
+                response.Data = result;
+                response.Message = EnumUtility.DisplayName(MessageEnums.GeneralActionMessage.FetchSuccess);
+                response.StatusCode = HttpStatusCode.OK;
+            }
+            catch (Exception ex) {
+                response.Success = false;
+                response.Message = EnumUtility.DisplayName(MessageEnums.GeneralActionMessage.FetchError);
+                response.StatusCode = HttpStatusCode.BadRequest;
+            }
+            return response;
+        }
+
+
         [HttpGet("getdetail/{id:int}")]
         public async Task<ApiPostResponse<GetAllProjectItemsMasterRespose>> GetDetailById(int id) {
             ApiPostResponse<GetAllProjectItemsMasterRespose> response = new ApiPostResponse<GetAllProjectItemsMasterRespose>() { Data = new GetAllProjectItemsMasterRespose() };
@@ -66,6 +92,7 @@ namespace PieceTracker.API.Controllers {
                 throw;
             }
         }
+
 
         [HttpPost("updatedetail")]
         public async Task<BaseApiResponse> InsertUpdateDetail([FromBody] AddUpdateProjectItemsMasterRequest request) {
@@ -87,7 +114,6 @@ namespace PieceTracker.API.Controllers {
             }
         }
 
-        //
 
         [HttpPost("updatedetails")]
         public async Task<BaseApiResponse> InsertUpdateDetails([FromBody] List<AddUpdateProjectItemsMasterRequest> requests) {
@@ -113,8 +139,6 @@ namespace PieceTracker.API.Controllers {
                 throw;
             }
         }
-
-        //
 
 
         [HttpPost("removedetail")]
