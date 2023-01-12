@@ -1,4 +1,5 @@
-﻿using PieceTracker.Model;
+﻿using PieceTracker.Common;
+using PieceTracker.Model;
 using PieceTracker.Model.Request;
 using PieceTracker.Model.Response;
 using System;
@@ -11,9 +12,10 @@ namespace PieceTracker.Service
 {
     public interface IDeliveryMasterService
     {
-        Task<List<GetAllDeliveryMasterResponse>> GetAll();
+        Task<List<GetAllDeliveryMasterResponse>> GetAll(string SearchString = null);
         Task<GetAllDeliveryMasterResponse> GetDetailById(int id);
         Task<GeneralModel> AddUpdateRecord(AddUpdateDeliveryMasterRequest request);
         Task<GeneralModel> DeleteRecord(AddUpdateDeliveryMasterRequest request);
+        Task<List<GetAllDeliveryMasterResponse>> GetProjectDeliveriesByDateAndStatus(GetProjectDeliveriesByDateAndStatusRequest request);
     }
 }

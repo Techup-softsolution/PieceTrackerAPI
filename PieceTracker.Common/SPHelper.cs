@@ -14,6 +14,7 @@ namespace PieceTracker.Common
         public const string ProjectItemStatus = "SP_ProjectItemStatus";
         public const string ProjectSummary = "SP_ProjectSummaryMaster";
         public const string Delivery = "SP_DeliveryMaster";
+        public const string ProjectDeliveriesByDateAndStatus = "SP_ProjectDeliveriesByDateAndStatus";
         public const string ProjectItems = "SP_ProjectItemsMaster";
         public const string ShopDetails = "SP_ShopMaster";
     }

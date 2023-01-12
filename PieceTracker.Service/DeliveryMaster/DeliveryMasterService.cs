@@ -1,4 +1,5 @@
-﻿using PieceTracker.Data.DBRepository;
+﻿using PieceTracker.Common;
+using PieceTracker.Data.DBRepository;
 using PieceTracker.Model;
 using PieceTracker.Model.Request;
 using PieceTracker.Model.Response;
@@ -17,9 +18,9 @@ namespace PieceTracker.Service
         {
             _repository = repository;
         }
-        public async Task<List<GetAllDeliveryMasterResponse>> GetAll()
+        public async Task<List<GetAllDeliveryMasterResponse>> GetAll(string SearchString = null)
         {
-            return await _repository.GetAll();
+            return await _repository.GetAll(SearchString);
         }
         public async Task<GetAllDeliveryMasterResponse> GetDetailById(int id)
         {
@@ -32,6 +33,10 @@ namespace PieceTracker.Service
         public async Task<GeneralModel> DeleteRecord(AddUpdateDeliveryMasterRequest request)
         {
             return await _repository.DeleteRecord(request);
+        }
+
+        public async Task<List<GetAllDeliveryMasterResponse>> GetProjectDeliveriesByDateAndStatus(GetProjectDeliveriesByDateAndStatusRequest request) {
+            return await _repository.GetProjectDeliveriesByDateAndStatus(request);
         }
     }
 }

@@ -53,6 +53,19 @@ namespace PieceTracker.Data.DBRepository
                 return new List<GetAllProjectItemsMasterRespose>();
             }
         }
+        public async Task<List<GetAllProjectItemsMasterRespose>> GetProjectItemsByDeliveryId(int deliveryId) {
+            try {
+                var param = new DynamicParameters();
+                param.Add("@Mode", "SDID");
+                param.Add("@Id", deliveryId);
+                var data = await QueryAsync<GetAllProjectItemsMasterRespose>(SPHelper.ProjectItems, param, commandType: CommandType.StoredProcedure);
+                return data.ToList();
+            }
+            catch (Exception ex) {
+                throw;
+            }
+        }
+
 
         public async Task<GetAllProjectItemsMasterRespose> GetDetailById(int id)
         {
@@ -112,6 +125,8 @@ namespace PieceTracker.Data.DBRepository
                 param.Add("@IsPainted", request.IsPainted);
                 param.Add("@IsActive", request.IsActive);
                 param.Add("@LoggedInUser", request.CreatedBy);
+                param.Add("@IsCoatingVendor", request.IsCoatingVendor);
+                param.Add("@IsVendorComplete", request.IsVendorComplete);
                 var result = await QueryFirstOrDefaultAsync<GeneralModel>(SPHelper.ProjectItems, param, commandType: CommandType.StoredProcedure);
                 modelResponse.Status = result.Status;
                 modelResponse.Message = Utility.GetResponseMessage(result.Status, request.Id, (int)Enums.ActionName.AddUpdate);

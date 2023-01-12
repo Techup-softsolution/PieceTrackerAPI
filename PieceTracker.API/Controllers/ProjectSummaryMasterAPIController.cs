@@ -3,6 +3,7 @@ using Microsoft.Extensions.Options;
 using PieceTracker.API.Logger;
 using PieceTracker.Common;
 using PieceTracker.Model;
+using PieceTracker.Model.Response;
 using PieceTracker.Service;
 using System.Net;
 
@@ -25,13 +26,13 @@ namespace PieceTracker.API.Controllers {
             _config = config;
             _appSettings = appSettings.Value;
         }
-        [HttpGet("getall")]
-        public async Task<ApiResponse<GetAllProjectSummaryResponse>> GetAll()
+        [HttpGet("getall/{SearchString?}")]
+        public async Task<ApiResponse<GetAllProjectSummaryResponse>> GetAll(string SearchString = null)
         {
             ApiResponse<GetAllProjectSummaryResponse> response = new ApiResponse<GetAllProjectSummaryResponse>() { Data = new List<GetAllProjectSummaryResponse>() };
             try
             {
-                var result = await _roleService.GetAll();
+                var result = await _roleService.GetAll(SearchString);
                 if (result == null)
                 {
                     response.Success = false;
@@ -177,6 +178,47 @@ namespace PieceTracker.API.Controllers {
                 response.Success = false;
                 response.StatusCode = HttpStatusCode.BadRequest;
                 response.Message = ex.Message;
+                throw;
+            }
+        }
+
+
+        [HttpGet("getAllByProjectId/{id:int}")]
+        public async Task<ApiPostResponse<GetProjectDataWithDeliveryDataResponse>> GetAllDetailById(int id) {
+            ApiPostResponse<GetProjectDataWithDeliveryDataResponse> response = new ApiPostResponse<GetProjectDataWithDeliveryDataResponse>();
+            try {
+                var data = await _roleService.GetAllProjectDataWithDeliveryListAsync(id);
+                response.Data = data;
+                response.Success = true;
+                response.Message = EnumUtility.DisplayName(MessageEnums.GeneralActionMessage.FetchSuccess);
+                response.StatusCode = HttpStatusCode.OK;
+                return response;
+            }
+            catch (Exception ex) {
+                _logger.Information(ex.ToString());
+                response.Success = false;
+                response.Message = EnumUtility.DisplayName(MessageEnums.GeneralActionMessage.FetchError);
+                response.StatusCode = HttpStatusCode.BadRequest;
+                throw;
+            }
+        }
+
+        [HttpGet("getAllByProjectDetails/{SearchString?}")]
+        public async Task<ApiPostResponse<List<GetProjectDataWithDeliveryDataResponse>>> GetAllProjectDetails(string SearchString = null) {
+            ApiPostResponse<List<GetProjectDataWithDeliveryDataResponse>> response = new ApiPostResponse<List<GetProjectDataWithDeliveryDataResponse>>();
+            try {
+                var data = await _roleService.GetAllProjectDetailsAsync(SearchString);
+                response.Data = data;
+                response.Success = true;
+                response.Message = EnumUtility.DisplayName(MessageEnums.GeneralActionMessage.FetchSuccess);
+                response.StatusCode = HttpStatusCode.OK;
+                return response;
+            }
+            catch (Exception ex) {
+                _logger.Information(ex.ToString());
+                response.Success = false;
+                response.Message = EnumUtility.DisplayName(MessageEnums.GeneralActionMessage.FetchError);
+                response.StatusCode = HttpStatusCode.BadRequest;
                 throw;
             }
         }

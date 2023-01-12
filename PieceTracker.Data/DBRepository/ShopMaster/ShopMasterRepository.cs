@@ -24,77 +24,137 @@ namespace PieceTracker.Data.DBRepository
             APIBaseURL = dataConfig.Value.FilePath;
         }
 
-        //Method to get shop list from SP
-        public async Task<List<GetAllShopMasterResponse>> GetAll()
-        {
-            try
-            {
-                var param = new DynamicParameters();
-                param.Add("@Mode", "S");
-                var data = await QueryAsync<GetAllShopMasterResponse>(SPHelper.ShopDetails, param, commandType: CommandType.StoredProcedure);
-                return data.ToList();
-            }
-            catch (Exception ex)
-            {
-                return new List<GetAllShopMasterResponse>();
-            }
-        }
+        ////Method to get shop list from SP
+        //public async Task<List<GetAllShopMasterResponse>> GetAll()
+        //{
+        //    try
+        //    {
+        //        var param = new DynamicParameters();
+        //        param.Add("@Mode", "S");
+        //        var data = await QueryAsync<GetAllShopMasterResponse>(SPHelper.ShopDetails, param, commandType: CommandType.StoredProcedure);
+        //        return data.ToList();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return new List<GetAllShopMasterResponse>();
+        //    }
+        //}
 
-        //Method to get shop by Id from SP
-        public async Task<GetAllShopMasterResponse> GetDetailById(int id)
-        {
-            try
-            {
-                var param = new DynamicParameters();
-                param.Add("@Mode", "SI");
-                param.Add("@Id", id);
-                var data = await QueryAsync<GetAllShopMasterResponse>(SPHelper.ShopDetails, param, commandType: CommandType.StoredProcedure);
-                return data.FirstOrDefault(); ;
-            }
-            catch (Exception ex)
-            {
-                return new GetAllShopMasterResponse();
-            }
-        }
+        ////Method to get shop by Id from SP
+        //public async Task<GetAllShopMasterResponse> GetDetailById(int id)
+        //{
+        //    try
+        //    {
+        //        var param = new DynamicParameters();
+        //        param.Add("@Mode", "SI");
+        //        param.Add("@Id", id);
+        //        var data = await QueryAsync<GetAllShopMasterResponse>(SPHelper.ShopDetails, param, commandType: CommandType.StoredProcedure);
+        //        return data.FirstOrDefault(); ;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return new GetAllShopMasterResponse();
+        //    }
+        //}
 
-        //Method to Insert or update shop by Id from SP
-        public async Task<GeneralModel> AddUpdateShop(AddUpdateShopMasterRequest request)
-        {
+        ////Method to Insert or update shop by Id from SP
+        //public async Task<GeneralModel> AddUpdateShop(AddUpdateShopMasterRequest request)
+        //{
+        //    GeneralModel modelResponse = new GeneralModel();
+        //    try
+        //    {
+        //        var param = new DynamicParameters();
+        //        if (request.Id == 0)
+        //        {
+        //            param.Add("@Mode", "I");
+        //        }
+        //        else
+        //        {
+        //            param.Add("@Mode", "U");
+        //            param.Add("@Id", request.Id);
+        //        }
+        //        param.Add("@ShopName", request.ShopName);
+        //        param.Add("@PartNumber", request.PartNumber);
+        //        param.Add("@ProjectId", request.ProjectId);
+        //        param.Add("@ProjectLocation", request.ProjectLocation);
+
+        //        param.Add("@Quantity", request.Quantity);
+        //        param.Add("@Weight", request.Weight);
+        //        param.Add("@SubItem", request.SubItem);
+        //        param.Add("@StatusId", request.StatusId);
+
+        //        param.Add("@IsActive", request.IsActive);
+        //        param.Add("@LoggedInUser", request.CreatedBy);
+        //        var result = await QueryFirstOrDefaultAsync<GeneralModel>(SPHelper.ShopDetails, param, commandType: CommandType.StoredProcedure);
+        //        modelResponse.Status = result.Status;
+        //        modelResponse.Message = Utility.GetResponseMessage(result.Status, request.Id, (int)Enums.ActionName.AddUpdate);
+        //        modelResponse.Id = result.Id;
+        //        return modelResponse;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return new GeneralModel
+        //        {
+        //            Id = 0,
+        //            Message = EnumUtility.DisplayName(MessageEnums.GeneralActionMessage.RecordNotFound),
+        //            Status = false,
+        //            RecordId = 0
+        //        };
+        //    }
+        //}
+
+        ////Method to Delete shop from SP
+        //public async Task<GeneralModel> DeleteRecord(AddUpdateShopMasterRequest request)
+        //{
+        //    GeneralModel response = new GeneralModel();
+        //    try
+        //    {
+        //        var param = new DynamicParameters();
+        //        param.Add("@Mode", "D");
+        //        param.Add("@Id", request.Id);
+        //        param.Add("@IsActive", request.IsActive);
+        //        param.Add("@LoggedInUser", request.ModifiedBy);
+        //        var result = await QueryFirstOrDefaultAsync<GeneralModel>(SPHelper.ShopDetails, param, commandType: CommandType.StoredProcedure);
+        //        response.Status = result.Status;
+        //        response.Message = Utility.GetResponseMessage(result.Status, request.Id, (int)Enums.ActionName.Delete);
+        //        response.Id = request.Id;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return new GeneralModel
+        //        {
+        //            Id = request.Id,
+        //            Status = false,
+        //            Message = (EnumUtility.DisplayName(MessageEnums.GeneralActionMessage.DeleteErrorMessage)) + " : " + ex.InnerException.Message.ToString()
+        //        };
+        //    }
+        //    return response;
+        //}
+
+        public async Task<GeneralModel> AddUpdateShop(AddUpdateShopMasterRequest request) {
             GeneralModel modelResponse = new GeneralModel();
-            try
-            {
+            try {
                 var param = new DynamicParameters();
-                if (request.Id == 0)
-                {
+                if (request.Id == 0) {
                     param.Add("@Mode", "I");
                 }
-                else
-                {
+                else {
                     param.Add("@Mode", "U");
                     param.Add("@Id", request.Id);
                 }
-                param.Add("@ShopName", request.ShopName);
-                param.Add("@PartNumber", request.PartNumber);
+               
                 param.Add("@ProjectId", request.ProjectId);
-                param.Add("@ProjectLocation", request.ProjectLocation);
+                param.Add("@UserId", request.CreatedBy);
+                param.Add("@ItemId", request.ItemId);
 
-                param.Add("@Quantity", request.Quantity);
-                param.Add("@Weight", request.Weight);
-                param.Add("@SubItem", request.SubItem);
-                param.Add("@StatusId", request.StatusId);
-
-                param.Add("@IsActive", request.IsActive);
-                param.Add("@LoggedInUser", request.CreatedBy);
                 var result = await QueryFirstOrDefaultAsync<GeneralModel>(SPHelper.ShopDetails, param, commandType: CommandType.StoredProcedure);
                 modelResponse.Status = result.Status;
                 modelResponse.Message = Utility.GetResponseMessage(result.Status, request.Id, (int)Enums.ActionName.AddUpdate);
                 modelResponse.Id = result.Id;
                 return modelResponse;
             }
-            catch (Exception ex)
-            {
-                return new GeneralModel
-                {
+            catch (Exception ex) {
+                return new GeneralModel {
                     Id = 0,
                     Message = EnumUtility.DisplayName(MessageEnums.GeneralActionMessage.RecordNotFound),
                     Status = false,
@@ -103,32 +163,33 @@ namespace PieceTracker.Data.DBRepository
             }
         }
 
-        //Method to Delete shop from SP
-        public async Task<GeneralModel> DeleteRecord(AddUpdateShopMasterRequest request)
-        {
-            GeneralModel response = new GeneralModel();
-            try
-            {
+        public async Task<List<GetProjectDataWithDeliveryDataResponse>> GetDetailByUserId(int userId, string SearchString) {
+            try {
+                List<GetProjectDataWithDeliveryDataResponse> responseList = new List<GetProjectDataWithDeliveryDataResponse>();
+
                 var param = new DynamicParameters();
-                param.Add("@Mode", "D");
-                param.Add("@Id", request.Id);
-                param.Add("@IsActive", request.IsActive);
-                param.Add("@LoggedInUser", request.ModifiedBy);
-                var result = await QueryFirstOrDefaultAsync<GeneralModel>(SPHelper.ShopDetails, param, commandType: CommandType.StoredProcedure);
-                response.Status = result.Status;
-                response.Message = Utility.GetResponseMessage(result.Status, request.Id, (int)Enums.ActionName.Delete);
-                response.Id = request.Id;
+                param.Add("@Mode", "PSUM");
+                param.Add("UserId", userId);
+                if (!string.IsNullOrWhiteSpace(SearchString))
+                    param.Add("@Search", SearchString);
+                var projectData = await QueryAsync<GetAllProjectSummaryResponse>(SPHelper.ShopDetails, param, commandType: CommandType.StoredProcedure);
+
+                param = new DynamicParameters();
+                param.Add("@Mode", "PITEM");
+                param.Add("UserId", userId);
+                var items = await QueryAsync<GetAllProjectItemsMasterRespose>(SPHelper.ShopDetails, param, commandType: CommandType.StoredProcedure);
+
+                foreach (var item in projectData.ToList()) {
+                    var proj = new GetProjectDataWithDeliveryDataResponse();
+                    proj.Project = item;
+                    proj.ProjectItems = items.Where(c => c.ProjectId == proj.Project.Id).ToList();
+                    responseList.Add(proj);
+                }
+                return responseList;
             }
-            catch (Exception ex)
-            {
-                return new GeneralModel
-                {
-                    Id = request.Id,
-                    Status = false,
-                    Message = (EnumUtility.DisplayName(MessageEnums.GeneralActionMessage.DeleteErrorMessage)) + " : " + ex.InnerException.Message.ToString()
-                };
+            catch (Exception ex) {
+                return new List<GetProjectDataWithDeliveryDataResponse>();
             }
-            return response;
         }
     }
 }

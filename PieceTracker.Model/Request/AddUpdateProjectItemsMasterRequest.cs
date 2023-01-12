@@ -32,6 +32,8 @@ namespace PieceTracker.Model
         public bool IsReadyForFabrication { get; set; }
         public bool IsFabricated { get; set; }
         public bool IsPainted { get; set; }
+        public bool IsCoatingVendor { get; set; }
+        public bool IsVendorComplete { get; set; }
 
     }
 }

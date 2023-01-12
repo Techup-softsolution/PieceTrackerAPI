@@ -9,7 +9,7 @@ namespace PieceTracker.Data.DBRepository
 {
     public interface IUserRepository
     {
-        Task<List<GetAllUserMasterResponse>> GetAll();
+        Task<List<GetAllUserMasterResponse>> GetAll(string SearchString);
         Task<GetAllUserMasterResponse> GetDetailById(int id);
         Task<GeneralModel> AddUpdateUser(AddUpdateUserMasterRequest request);
 

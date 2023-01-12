@@ -1,17 +1,14 @@
 ﻿using PieceTracker.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using PieceTracker.Model.Response;
 
-namespace PieceTracker.Service
-{
+namespace PieceTracker.Service {
     public interface IProjectSummaryMasterService
     {
-        Task<List<GetAllProjectSummaryResponse>> GetAll();
+        Task<List<GetAllProjectSummaryResponse>> GetAll(string SearchString);
         Task<GetAllProjectSummaryResponse> GetDetailById(int id);
         Task<GeneralModel> AddUpdateRecord(AddUpdateProjectSummaryRequest request);
         Task<GeneralModel> DeleteRecord(AddUpdateProjectSummaryRequest request);
+        Task<GetProjectDataWithDeliveryDataResponse> GetAllProjectDataWithDeliveryListAsync(int id);
+        Task<List<GetProjectDataWithDeliveryDataResponse>> GetAllProjectDetailsAsync(string SearchString);
     }
 }

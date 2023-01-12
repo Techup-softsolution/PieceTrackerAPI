@@ -19,9 +19,9 @@ namespace PieceTracker.Service
         }
 
         //Get user list from repository
-        public async Task<List<GetAllUserMasterResponse>> GetAll()
+        public async Task<List<GetAllUserMasterResponse>> GetAll(string SearchString)
         {
-            return await _repository.GetAll();
+            return await _repository.GetAll(SearchString);
         }
 
         //Get get user by Id from repository

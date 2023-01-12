@@ -11,7 +11,7 @@ using System.Net;
 namespace PieceTracker.API.Controllers
 {
     [Route("api/deliveryitem")]
-    [Authorize]
+    //[Authorize]
     [ApiController]
     public class DeliveryMasterAPIController : ControllerBase
     {
@@ -28,13 +28,13 @@ namespace PieceTracker.API.Controllers
             _appSettings = appSettings.Value;
         }
 
-        [HttpGet("getall")]
-        public async Task<ApiResponse<GetAllDeliveryMasterResponse>> GetAll()
+        [HttpGet("getall/{SearchString?}")]
+        public async Task<ApiResponse<GetAllDeliveryMasterResponse>> GetAll(string SearchString = null)
         {
             ApiResponse<GetAllDeliveryMasterResponse> response = new ApiResponse<GetAllDeliveryMasterResponse>() { Data = new List<GetAllDeliveryMasterResponse>() };
             try
             {
-                var result = await _roleService.GetAll();
+                var result = await _roleService.GetAll(SearchString);
                 if (result == null)
                 {
                     response.Success = false;
@@ -117,6 +117,30 @@ namespace PieceTracker.API.Controllers
                 response.Message = ex.Message;
                 throw;
             }
+        }
+        
+        [HttpPost("getProjectDeliveriesByDateAndStatus")]
+        public async Task<ApiResponse<GetAllDeliveryMasterResponse>> GetProjectDeliveriesByDateAndStatus(GetProjectDeliveriesByDateAndStatusRequest request) {
+            ApiResponse<GetAllDeliveryMasterResponse> response = new ApiResponse<GetAllDeliveryMasterResponse>() { Data = new List<GetAllDeliveryMasterResponse>() };
+            try {              
+
+                var result = await _roleService.GetProjectDeliveriesByDateAndStatus(request);
+                if (result == null) {
+                    response.Success = false;
+                    response.Message = EnumUtility.DisplayName(MessageEnums.GeneralActionMessage.RecordNotFound);
+                    response.StatusCode = HttpStatusCode.NotFound;
+                }
+                response.Success = true;
+                response.Data = result;
+                response.Message = EnumUtility.DisplayName(MessageEnums.GeneralActionMessage.FetchSuccess);
+                response.StatusCode = HttpStatusCode.OK;
+            }
+            catch (Exception ex) {
+                response.Success = false;
+                response.Message = EnumUtility.DisplayName(MessageEnums.GeneralActionMessage.FetchError);
+                response.StatusCode = HttpStatusCode.BadRequest;
+            }
+            return response;
         }
     }
 }

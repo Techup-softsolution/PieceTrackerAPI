@@ -20,16 +20,15 @@ namespace PieceTracker.Service
             _repository = repository;
         }
 
-        //Get shop list from repository
-        public async Task<List<GetAllShopMasterResponse>> GetAll()
-        {
-            return await _repository.GetAll();
-        }
+        ////Get shop list from repository
+        //public async Task<List<GetAllShopMasterResponse>> GetAll()
+        //{
+        //    return await _repository.GetAll();
+        //}
 
-        //Get get shop by Id from repository
-        public async Task<GetAllShopMasterResponse> GetDetailById(int id)
-        {
-            return await _repository.GetDetailById(id);
+     
+        public async Task<List<GetProjectDataWithDeliveryDataResponse>> GetDetailByUserId(int userId, string SearchString) {
+            return await _repository.GetDetailByUserId(userId,SearchString);
         }
 
         //Insert or update shop by Id from repository
@@ -38,10 +37,10 @@ namespace PieceTracker.Service
             return await _repository.AddUpdateShop(request);
         }
 
-        //Delete shop from repository
-        public async Task<GeneralModel> DeleteRecord(AddUpdateShopMasterRequest request)
-        {
-            return await _repository.DeleteRecord(request);
-        }
+        ////Delete shop from repository
+        //public async Task<GeneralModel> DeleteRecord(AddUpdateShopMasterRequest request)
+        //{
+        //    return await _repository.DeleteRecord(request);
+        //}
     }
 }

@@ -8,6 +8,8 @@ using Microsoft.Extensions.Options;
 using System.Net;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.DataProtection;
+using Azure;
+using System.Web.Helpers;
 
 namespace PieceTracker.API.Controllers
 {
@@ -106,6 +108,47 @@ namespace PieceTracker.API.Controllers
             }
             catch (Exception ex)
             {
+                _logger.Information(ex.ToString());
+                response.Success = false;
+                response.Message = EnumUtility.DisplayName(MessageEnums.GeneralActionMessage.FetchError);
+                response.StatusCode = HttpStatusCode.BadRequest;
+                throw;
+            }
+        }
+
+        [HttpGet("CheckEmailExists/{email}")]
+        public async Task<ApiPostResponse<bool>> CheckEmailExists(string email) {
+            ApiPostResponse<bool> response = new ApiPostResponse<bool>() { Data = false };
+            try {
+                var data = await _authService.CheckEmailExists(email);
+                response.Data = data;
+                response.Success = true;
+                response.Message = EnumUtility.DisplayName(MessageEnums.GeneralActionMessage.FetchSuccess);
+                response.StatusCode = HttpStatusCode.OK;
+                return response;
+            }
+            catch (Exception ex) {
+                _logger.Information(ex.ToString());
+                response.Success = false;
+                response.Message = EnumUtility.DisplayName(MessageEnums.GeneralActionMessage.FetchError);
+                response.StatusCode = HttpStatusCode.BadRequest;
+                throw;
+            }
+        }
+
+        [HttpPost]
+        [Route("ChangeUserPassword")]
+        public async Task<ApiPostResponse<bool>> ChangeUserPassword(AuthenticationMasterRequest model) {
+            ApiPostResponse<bool> response = new ApiPostResponse<bool>() { Data = false };
+            try {
+                var data = await _authService.ChangeUserPassword(model);
+                response.Data = data;
+                response.Success = true;
+                response.Message = EnumUtility.DisplayName(MessageEnums.GeneralActionMessage.FetchSuccess);
+                response.StatusCode = HttpStatusCode.OK;
+                return response;
+            }
+            catch (Exception ex) {
                 _logger.Information(ex.ToString());
                 response.Success = false;
                 response.Message = EnumUtility.DisplayName(MessageEnums.GeneralActionMessage.FetchError);

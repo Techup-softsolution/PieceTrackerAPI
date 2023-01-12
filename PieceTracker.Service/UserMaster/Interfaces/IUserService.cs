@@ -9,7 +9,7 @@ namespace PieceTracker.Service
 {
     public interface IUserService
     {
-        Task<List<GetAllUserMasterResponse>> GetAll();
+        Task<List<GetAllUserMasterResponse>> GetAll(string SearchString);
         Task<GetAllUserMasterResponse> GetDetailById(int id);
         Task<GeneralModel> AddUpdateUser(AddUpdateUserMasterRequest request);
 

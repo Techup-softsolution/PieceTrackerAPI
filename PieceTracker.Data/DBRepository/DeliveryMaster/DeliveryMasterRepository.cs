@@ -19,12 +19,14 @@ namespace PieceTracker.Data.DBRepository
             APIBaseURL = dataConfig.Value.FilePath;
         }
 
-        public async Task<List<GetAllDeliveryMasterResponse>> GetAll()
+        public async Task<List<GetAllDeliveryMasterResponse>> GetAll(string SearchString)
         {
             try
             {
                 var param = new DynamicParameters();
                 param.Add("@Mode", "S");
+                if (!string.IsNullOrWhiteSpace(SearchString))
+                    param.Add("@Search", SearchString);
                 var data = await QueryAsync<GetAllDeliveryMasterResponse>(SPHelper.Delivery, param, commandType: CommandType.StoredProcedure);
                 return data.ToList();
             }
@@ -116,6 +118,30 @@ namespace PieceTracker.Data.DBRepository
                 };
             }
             return response;
+        }
+
+        public async Task<List<GetAllDeliveryMasterResponse>> GetProjectDeliveriesByDateAndStatus(GetProjectDeliveriesByDateAndStatusRequest request) {
+            try {
+                var param = new DynamicParameters();
+
+                //if (request.ProjectId.HasValue && request.ProjectId.Value > 0)
+                    param.Add("@ProjectId", request.ProjectId);
+
+                //if (request.Status.HasValue) 
+                    param.Add("@Status", request.Status);
+
+                //if (request.StartDate.HasValue)
+                    param.Add("@StartDate", request.StartDate);
+
+                //if (request.EndDate.HasValue)
+                    param.Add("@EndDate", request.EndDate);
+                
+                var data = await QueryAsync<GetAllDeliveryMasterResponse>(SPHelper.ProjectDeliveriesByDateAndStatus, param, commandType: CommandType.StoredProcedure);
+                return data.ToList();
+            }
+            catch (Exception ex) {
+                return new List<GetAllDeliveryMasterResponse>();
+            }
         }
     }
 }

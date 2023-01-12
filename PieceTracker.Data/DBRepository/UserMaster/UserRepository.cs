@@ -23,12 +23,14 @@ namespace PieceTracker.Data.DBRepository
         }
 
         //Method to get user list from SP
-        public async Task<List<GetAllUserMasterResponse>> GetAll()
+        public async Task<List<GetAllUserMasterResponse>> GetAll(string SearchString)
         {
             try
             {
                 var param = new DynamicParameters();
                 param.Add("@Mode", "S");
+                if(!string.IsNullOrWhiteSpace(SearchString))
+                    param.Add("@Search", SearchString);
                 var data = await QueryAsync<GetAllUserMasterResponse>(SPHelper.UserDetail, param, commandType: CommandType.StoredProcedure);
                 return data.ToList();
             }

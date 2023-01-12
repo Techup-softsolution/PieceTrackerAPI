@@ -11,7 +11,7 @@ using System.Net;
 
 namespace PieceTracker.API.Controllers {
     [Route("api/projectitems")]
-    [Authorize]
+    //[Authorize]
     [ApiController]
     public class ProjectItemsMasterAPIController : ControllerBase {
         private readonly ILoggerManager _logger;
@@ -92,6 +92,28 @@ namespace PieceTracker.API.Controllers {
                 throw;
             }
         }
+
+        //
+        [HttpGet("getItemsByDeliveryId/{id:int}")]
+        public async Task<ApiResponse<GetAllProjectItemsMasterRespose>> GetProjectItemsByDeliveryId(int id) {
+            ApiResponse<GetAllProjectItemsMasterRespose> response = new ApiResponse<GetAllProjectItemsMasterRespose>() { Data = new List<GetAllProjectItemsMasterRespose>() };
+            try {
+                var data = await _roleService.GetProjectItemsByDeliveryId(id);
+                response.Data = data;
+                response.Success = true;
+                response.Message = EnumUtility.DisplayName(MessageEnums.GeneralActionMessage.FetchSuccess);
+                response.StatusCode = HttpStatusCode.OK;
+                return response;
+            }
+            catch (Exception ex) {
+                _logger.Information(ex.ToString());
+                response.Success = false;
+                response.Message = EnumUtility.DisplayName(MessageEnums.GeneralActionMessage.FetchError);
+                response.StatusCode = HttpStatusCode.BadRequest;
+                throw;
+            }
+        }
+        //
 
 
         [HttpPost("updatedetail")]

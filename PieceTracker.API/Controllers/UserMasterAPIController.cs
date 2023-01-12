@@ -24,13 +24,14 @@ namespace PieceTracker.API.Controllers
             _config = config;
             _appSettings = appSettings.Value;
         }
-        [HttpGet("getall")]
-        public async Task<ApiResponse<GetAllUserMasterResponse>> GetAll()
+
+        [HttpGet("getall/{SearchString?}")]
+        public async Task<ApiResponse<GetAllUserMasterResponse>> GetAll(string SearchString = null)
         {
             ApiResponse<GetAllUserMasterResponse> response = new ApiResponse<GetAllUserMasterResponse>() { Data = new List<GetAllUserMasterResponse>() };
             try
             {
-                var result = await _userService.GetAll();
+                var result = await _userService.GetAll(SearchString);
                 if (result == null)
                 {
                     response.Success = false;

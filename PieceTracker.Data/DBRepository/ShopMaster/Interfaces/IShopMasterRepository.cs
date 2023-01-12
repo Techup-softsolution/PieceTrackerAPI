@@ -11,10 +11,10 @@ namespace PieceTracker.Data.DBRepository
 {
     public interface IShopMasterRepository
     {
-        Task<List<GetAllShopMasterResponse>> GetAll();
-        Task<GetAllShopMasterResponse> GetDetailById(int id);
+        //Task<List<GetAllShopMasterResponse>> GetAll();
+        Task<List<GetProjectDataWithDeliveryDataResponse>> GetDetailByUserId(int userId, string SearchString);
         Task<GeneralModel> AddUpdateShop(AddUpdateShopMasterRequest request);
 
-        Task<GeneralModel> DeleteRecord(AddUpdateShopMasterRequest request);
+        //Task<GeneralModel> DeleteRecord(AddUpdateShopMasterRequest request);
     }
 }

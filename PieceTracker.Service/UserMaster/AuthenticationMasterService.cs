@@ -28,5 +28,11 @@ namespace PieceTracker.Service
         {
             return await _repository.GetLoggedInUserDetail(id);
         }
+        public async Task<bool> CheckEmailExists(string email) {
+            return await _repository.CheckEmailExists(email);
+        }
+        public async Task<bool> ChangeUserPassword(AuthenticationMasterRequest model) {
+            return await _repository.ChangeUserPassword(model);
+        }
     }
 }

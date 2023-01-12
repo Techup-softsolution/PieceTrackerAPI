@@ -13,6 +13,7 @@ namespace PieceTracker.Data.DBRepository
     {
         Task<List<GetAllProjectItemsMasterRespose>> GetAll();
         Task<List<GetAllProjectItemsMasterRespose>> GetAllByProjectId(int id);
+        Task<List<GetAllProjectItemsMasterRespose>> GetProjectItemsByDeliveryId(int deliveryId);
         Task<GetAllProjectItemsMasterRespose> GetDetailById(int id);
         Task<GeneralModel> AddUpdateRecord(AddUpdateProjectItemsMasterRequest request);
         Task<GeneralModel> DeleteRecord(AddUpdateProjectItemsMasterRequest request);

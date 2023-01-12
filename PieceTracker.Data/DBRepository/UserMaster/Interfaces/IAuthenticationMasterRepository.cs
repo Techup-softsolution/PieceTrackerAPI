@@ -12,5 +12,7 @@ namespace PieceTracker.Data.DBRepository
         Task<AuthenticationDTO> GetUserAuthenticationDetail(AuthenticationMasterRequest request);
         //Task<GeneralModel> VerifyUserMobile(VerifyUserRequest request);
         Task<AuthenticationDTO> GetLoggedInUserDetail(int id);
+        Task<bool> CheckEmailExists(string email);
+        Task<bool> ChangeUserPassword(AuthenticationMasterRequest model);
     }
 }

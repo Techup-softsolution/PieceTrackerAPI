@@ -9,7 +9,7 @@ namespace PieceTracker.Model
         public string PartNumber { get; set; }
         public string Description { get; set; }
         public int ProjectId { get; set; }
-        public int DeliveryId { get; set; }
+        public int? DeliveryId { get; set; }
         public decimal Quantity { get; set; }
         public decimal Weight { get; set; }
         public string ProjectLocation { get; set; }
@@ -32,6 +32,8 @@ namespace PieceTracker.Model
         public bool IsReadyForFabrication { get; set; }
         public bool IsFabricated { get; set; }
         public bool IsPainted { get; set; }
+        public bool IsCoatingVendor { get; set; }
+        public bool IsVendorComplete { get; set; }
 
     }
 }
