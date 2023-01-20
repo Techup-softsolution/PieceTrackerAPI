@@ -96,6 +96,34 @@ namespace PieceTracker.API.Controllers {
                 throw;
             }
         }
+        /// 
+        [HttpPost("updatedetails")]
+        public async Task<BaseApiResponse> InsertUpdateDetails([FromBody] List<PieceTracker.Model.AddUpdateProjectSummaryRequest> requests) {
+            BaseApiResponse response = new BaseApiResponse();
+            try {
+                GeneralModel result = new GeneralModel();
+                foreach (var request in requests) {
+                    result = await _roleService.AddUpdateRecord(request);
+                    if (result.Status == false) {
+                        break;
+                    }
+                }
+                response.Id = result.Id;
+                response.Message = result.Message;
+                response.StatusCode = HttpStatusCode.OK;
+                response.Success = result.Status;
+                return response;
+            }
+            catch (Exception ex) {
+                _logger.Information(ex.ToString());
+                response.Success = false;
+                response.StatusCode = HttpStatusCode.BadRequest;
+                response.Message = ex.Message;
+                throw;
+            }
+        }
+
+        /// 
         [HttpPost("removedetail")]
         public async Task<BaseApiResponse> DeleteDetail(AddUpdateProjectSummaryRequest request)
         {
