@@ -147,6 +147,7 @@ namespace PieceTracker.Data.DBRepository {
                 }
 
                 response.NoDeliveryData = projectItems.Where(c => c.DeliveryId == null || c.DeliveryId == 0).ToList();
+                response.ProjectItems = projectItems.ToList();
                 return response;
             }
             catch (Exception ex) {

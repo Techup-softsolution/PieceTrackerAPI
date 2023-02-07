@@ -101,15 +101,21 @@ namespace PieceTracker.API.Controllers {
         public async Task<BaseApiResponse> InsertUpdateDetails([FromBody] List<PieceTracker.Model.AddUpdateProjectSummaryRequest> requests) {
             BaseApiResponse response = new BaseApiResponse();
             try {
+                List<string> failedNames = new List<string>();
                 GeneralModel result = new GeneralModel();
                 foreach (var request in requests) {
                     result = await _roleService.AddUpdateRecord(request);
                     if (result.Status == false) {
-                        break;
+                        failedNames.Add(request.ProjectName);
                     }
                 }
                 response.Id = result.Id;
-                response.Message = result.Message;
+
+                if(failedNames.Count > 0) 
+                    response.Message = "Failed To Insert : " + string.Join(',', failedNames);                
+                else
+                    response.Message = "success";
+
                 response.StatusCode = HttpStatusCode.OK;
                 response.Success = result.Status;
                 return response;

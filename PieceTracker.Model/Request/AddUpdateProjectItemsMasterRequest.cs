@@ -19,10 +19,10 @@ namespace PieceTracker.Model
         public decimal EstimateLabourHours { get; set; }
         public string ReferSheetNumber { get; set; }
         public int CoatingType { get; set; }
-        public DateTime ScheduleFabricateDate { get; set; }
-        public DateTime ScheduleCoatingDate { get; set; }
-        public DateTime ActualFabricateDate { get; set; }
-        public DateTime ActualCoatingDate { get; set; }
+        public DateTime? ScheduleFabricateDate { get; set; }
+        public DateTime? ScheduleCoatingDate { get; set; }
+        public DateTime? ActualFabricateDate { get; set; }
+        public DateTime? ActualCoatingDate { get; set; }
         public string FabricatorName { get; set; }
         public string CoatingVendorName { get; set; }
         //public int ItemStatus { get; set; }
