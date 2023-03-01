@@ -128,8 +128,13 @@ namespace PieceTracker.Data.DBRepository
                 param.Add("@IsCoatingVendor", request.IsCoatingVendor);
                 param.Add("@IsVendorComplete", request.IsVendorComplete);
                 var result = await QueryFirstOrDefaultAsync<GeneralModel>(SPHelper.ProjectItems, param, commandType: CommandType.StoredProcedure);
-                modelResponse.Status = result.Status;
-                modelResponse.Message = Utility.GetResponseMessage(result.Status, request.Id, (int)Enums.ActionName.AddUpdate);
+                modelResponse.Status = result.Status;               
+
+                if (result.Status == false)
+                    modelResponse.Message = Utility.GetResponseMessage(result.Status, request.Id, (int)Enums.ActionName.AddUpdate, result.Message);
+                else
+                    modelResponse.Message = Utility.GetResponseMessage(result.Status, request.Id, (int)Enums.ActionName.AddUpdate);
+
                 modelResponse.Id = result.Id;
                 return modelResponse;
             }

@@ -38,7 +38,7 @@ namespace PieceTracker.API.Controllers
             {
                 var data = await _authService.GetUserAuthenticationDetail(model);
                 response.Data = data;
-                if (response.Data != null)
+                if (response.Data != null && response.Data.Id > 0 && response.Data.RoleId > 0)
                 {
                     response.Success = true;
                     response.Message = (EnumUtility.DisplayName(MessageEnums.GeneralActionMessage.LoginSuccess));

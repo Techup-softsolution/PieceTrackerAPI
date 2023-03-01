@@ -7,6 +7,7 @@ namespace PieceTracker.Model.Response
     public class GetAllDeliveryMasterResponse : ResponseBaseModel
     {
         public int ProjectId { get; set; }
+        public string ProjectName { get; set; }
         public int Vehicle { get; set; }
         public string Instructions { get; set; }
         public bool IsProjectAddress { get; set; }
